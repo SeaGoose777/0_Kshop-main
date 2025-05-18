@@ -5,9 +5,10 @@
 <head>
 
     <title>Aespa</title>
-	<link rel="icon" href="ICONS  OTHERS/WHIPLASH LOGO.png" sizes="32x32">
+	<link rel="icon" href="ICONS/WHIPLASH LOGO.png" sizes="32x32">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="stylesalbums.css">
+    <link rel="stylesheet" href="common.css">
 </head>
 
 <body>
@@ -163,5 +164,6 @@
         </div>
 		
     </div>
+    <script src="common.js"></script>
 </body>
 </html>

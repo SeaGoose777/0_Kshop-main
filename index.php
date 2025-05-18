@@ -4,8 +4,9 @@
 <html>
 <head>
     <title>Home</title>
-    <link rel="icon" href="ICONS  OTHERS/WHIPLASH LOGO.png" sizes="32x32">
+    <link rel="icon" href="ICONS/WHIPLASH LOGO.png" sizes="32x32">
     <link rel="stylesheet" href="stylesindex.css">
+    <link rel="stylesheet" href="common.css">
 </head>
 
 <body>
@@ -82,5 +83,8 @@
     
         <div class="footer-line"></div>
 </footer>
+
+<script src="common.js"></script>
+
 </body>
 </html>

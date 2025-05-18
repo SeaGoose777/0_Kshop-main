@@ -21,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if (password_verify($password, $user['password'])) {
                 $_SESSION['firstname'] = $user['firstname']; 
                 $_SESSION['email'] = $user['email'];
+                $_SESSION['user_id'] = $user['user_id'];
                 header("Location: index.php");
                 exit();
             } else {
