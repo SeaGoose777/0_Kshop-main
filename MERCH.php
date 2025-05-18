@@ -1,3 +1,5 @@
+<?php session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,19 +15,19 @@
     
         
         <label for="menu-toggle" class="menu-icon">
-            <img src="ICONS  OTHERS/menu-bar.png" alt="Menu" class="icon">
+            <img src="ICONS/menu-bar.png" alt="Menu" class="icon">
         </label>
     
         
         <div class="sidebar">
-            <a href="Albums.html">
-                <img src="ICONS  OTHERS/stack.png" alt="Albums" class="dropdown-icon"> Albums
+            <a href="ALBUMS.php">
+                <img src="ICONS/stack.png" alt="Albums" class="dropdown-icon"> Albums
             </a>
-            <a href="MERCH.html">
-                <img src="ICONS  OTHERS/bag.png" alt="Merchandise" class="dropdown-icon"> Merchandise
+            <a href="MERCH.php">
+                <img src="ICONS/bag.png" alt="Merchandise" class="dropdown-icon"> Merchandise
             </a>
             <a href="">
-                <img src="ICONS  OTHERS/people.png" alt="About us" class="dropdown-icon"> About us
+                <img src="ICONS/people.png" alt="About us" class="dropdown-icon"> About us
             </a>
         </div>
     
@@ -33,17 +35,27 @@
         <label for="menu-toggle" class="overlay"></label>
     
         
-        <a href="index.html" class="home-logo">
-            <img src="ICONS  OTHERS/MAIN_LOGO.jpeg" alt="Home" class="logo-center">
+        <a href="index.php" class="home-logo">
+            <img src="ICONS/MAIN_LOGO.jpeg" alt="Home" class="logo-center">
         </a>
     
         
         <div class="right-icons">
-            <a href="LOGIN.html">
-                <img src="ICONS  OTHERS/account.png" alt="Account" class="icon">
-            </a>
+            <?php if (isset($_SESSION['firstname'])): ?>
+                <span style="font-family: sans-serif; font-size: 14px;">
+                    Welcome, <?= htmlspecialchars($_SESSION['firstname']) ?>
+                </span>
+                <a href="logout.php">
+                    <img src="ICONS/exit.png" alt="Logout" class="icon" />
+                </a>
+            <?php else: ?>
+                <a href="LOGIN.html">
+                    <img src="ICONS/account.png" alt="Account" class="icon" />
+                </a>
+            <?php endif; ?>
+
             <a href="#cart">
-                <img src="ICONS  OTHERS/shopping-cart.png" alt="Cart" class="icon">
+                <img src="ICONS/shopping-cart.png" alt="Cart" class="icon">
             </a>
         </div>
     </div>
@@ -117,8 +129,6 @@
             
     
         </div>
-
-        
 
         <div class="cart">
             <h2>Shopping Cart</h2>

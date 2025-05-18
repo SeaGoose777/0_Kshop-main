@@ -1,39 +1,36 @@
 <?php
 session_start();
+require 'conn.php';
 
-// Connect to DB
-$conn = new mysqli("localhost", "root", "1234", "kpop");
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+    if (isset($_POST['email']) && isset($_POST['password'])) {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-// Get POST values
-$email = $_POST['email'];
-$password = $_POST['password'];
 
-// Check user
-$stmt = $conn->prepare("SELECT id, firstname, password FROM users WHERE email = ?");
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$stmt->store_result();
+        $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-if ($stmt->num_rows > 0) {
-    $stmt->bind_result($id, $firstname, $hashedPassword);
-    $stmt->fetch();
+        if ($result && $result->num_rows === 1) {
+            $user = $result->fetch_assoc();
 
-    if (password_verify($password, $hashedPassword)) {
-        $_SESSION['user_id'] = $id;
-        $_SESSION['user_name'] = $firstname;
-        header("Location: index.php"); // Success → redirect
-        exit;
+
+            if (password_verify($password, $user['password'])) {
+                $_SESSION['firstname'] = $user['firstname']; 
+                $_SESSION['email'] = $user['email'];
+                header("Location: index.php");
+                exit();
+            } else {
+                echo "Incorrect password.";
+            }
+        } else {
+            echo "User not found.";
+        }
     } else {
-        echo "Incorrect password.";
+        echo "Please fill in both fields.";
     }
-} else {
-    echo "User not found.";
 }
-
-$stmt->close();
-$conn->close();
 ?>
