@@ -1,0 +1,171 @@
+body {
+    background-color: #f5f5f5;
+    font-family: -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    background-color: #FFF;
+    color: #000;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    padding: 40px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: opacity 0.3s ease;
+}
+
+.transition {
+    transition: all 0.3s ease;
+}
+
+.content-header img {
+    align-items: center;
+    padding: 50px 50px;
+    margin-left: 25%;
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.text h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.text p {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.fill input,
+.pass input,
+.login_box input {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #000;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.fill input:focus,
+.pass input:focus,
+.login_box input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.submit button {
+    background-color: grey;
+    color: white;
+}
+
+.submit button:hover {
+    background-color: #444;
+}
+
+.login_registration {
+    display: none;
+    width: 100%;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.login_registration.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.login_registration h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.login_area {
+    display: flex;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+.login_form {
+    width: 100%;
+    max-width: 500px;
+}
+
+.login_group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.login_box {
+    position: relative;
+}
+
+.login_icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
