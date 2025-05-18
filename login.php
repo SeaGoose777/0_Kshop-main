@@ -25,7 +25,7 @@ if ($stmt->num_rows > 0) {
     if (password_verify($password, $hashedPassword)) {
         $_SESSION['user_id'] = $id;
         $_SESSION['user_name'] = $firstname;
-        header("Location: index.html"); // Success → redirect
+        header("Location: index.php"); // Success → redirect
         exit;
     } else {
         echo "Incorrect password.";

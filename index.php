@@ -1,3 +1,5 @@
+<?php session_start(); 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,9 +36,17 @@
         </a>
     
         <div class="right-icons">
-            <a href="LOGIN.html">
-                <img src="ICONS  OTHERS/account.png" alt="Account" class="icon">
-            </a>
+            <?php if (isset($_SESSION['id'])): ?>
+                <div class="right-icons">
+                    <span>Welcome, <?= htmlspecialchars($_SESSION['firstname']) ?>!</span>
+                    <a href="logout.php"><img src="ICONS OTHERS/exit.png" alt="Logout" class="icon"></a>
+                </div>
+            <?php else: ?>
+                <div class="right-icons">
+                    <a href="LOGIN.HTML"><img src="ICONS/account-icon.png" alt="Login" class="icon"></a>
+                </div>
+            <?php endif; ?>
+
             <a href="#cart">
                 <img src="ICONS  OTHERS/shopping-cart.png" alt="Cart" class="icon">
             </a>
