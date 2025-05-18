@@ -76,9 +76,15 @@ while($row = $result->fetch_assoc()) {
             <span class="close-modal">&times;</span>
             <h2>Shopping Cart</h2>
             <ul id="cart-modal-items"></ul>
-            <p>Total: <span id="cart-modal-total">₱0</span></p>
-            <button id="modal-checkout" class="checkout-button">Checkout</button>
-            <button id="modal-remove" class="remove-all-button">Remove All</button>
+            <div class="modal-footer">
+                <div class="modal-total">
+                    Total: <span id="cart-modal-total">₱0</span>
+                </div>
+                <div class="modal-buttons">
+                    <button id="modal-checkout" class="checkout-button">Checkout</button>
+                    <button id="modal-remove" class="remove-all-button">Remove All</button>
+                </div>
+            </div>
         </div>
     </div>
 

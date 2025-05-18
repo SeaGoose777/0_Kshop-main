@@ -1,28 +1,26 @@
-<?php session_start(); 
+<?php 
+session_start();
+require_once 'conn.php';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-
     <title>Aespa</title>
-	<link rel="icon" href="ICONS/WHIPLASH LOGO.png" sizes="32x32">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="ICONS/WHIPLASH LOGO.png" sizes="32x32">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="stylesalbums.css">
     <link rel="stylesheet" href="common.css">
 </head>
 
 <body>
-
+    <div id="notification-container"></div>
     <div class="navbar">
-        
         <input type="checkbox" id="menu-toggle" hidden>
     
-        
         <label for="menu-toggle" class="menu-icon">
             <img src="ICONS/menu-bar.png" alt="Menu" class="icon">
         </label>
     
-        
         <div class="sidebar">
             <a href="ALBUMS.php">
                 <img src="ICONS/stack.png" alt="About" class="dropdown-icon"> Albums
@@ -35,18 +33,15 @@
             </a>
         </div>
     
-        <!-- BACK BUTTON NG SIDE BAR -->
         <label for="menu-toggle" class="overlay"></label>
     
-        <!-- Center Logo -->
         <a href="index.php" class="home-logo">
             <img src="ICONS/MAIN_LOGO.jpeg" alt="Home" class="logo-center">
         </a>
     
-        <!-- Right Icons -->
         <div class="right-icons">
             <?php if (isset($_SESSION['firstname'])): ?>
-                <span style="font-family: sans-serif; font-size: 14px;">
+                <span class="user-welcome">
                     Welcome, <?= htmlspecialchars($_SESSION['firstname']) ?>
                 </span>
                 <a href="logout.php">
@@ -57,17 +52,13 @@
                     <img src="ICONS/account.png" alt="Account" class="icon" />
                 </a>
             <?php endif; ?>
-
-            <a href="#cart">
-                <img src="ICONS/shopping-cart.png" alt="Cart" class="icon">
-            </a>
         </div>
     </div>
 
     <hr>
 
-    <div class= header>
-    <h1>DISCOGRAPHY</h1>
+    <div class="header">
+        <h1>DISCOGRAPHY</h1>
     </div>
 
     <div class="gallery">
@@ -164,6 +155,7 @@
         </div>
 		
     </div>
+
     <script src="common.js"></script>
 </body>
 </html>

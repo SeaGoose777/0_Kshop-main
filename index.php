@@ -1,4 +1,5 @@
-<?php session_start(); 
+<?php session_start();
+require_once 'conn.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,63 +11,57 @@
 </head>
 
 <body>
-<main>
-    <div class="navbar">
-        <input type="checkbox" id="menu-toggle" hidden>
+    <div id="notification-container"></div>
+    <main>
+        <div class="navbar">
+            <input type="checkbox" id="menu-toggle" hidden>
 
-        <label for="menu-toggle" class="menu-icon">
-            <img src="ICONS/menu-bar.png" alt="Menu" class="icon">
-        </label>
-    
-        <div class="sidebar">
-            <a href="ALBUMS.php">
-                <img src="ICONS/stack.png" alt="About" class="dropdown-icon"> Albums
-            </a>
-            <a href="MERCH.php">
-                <img src="ICONS/bag.png" alt="Merch" class="dropdown-icon"> Merchandise
-            </a>
-            <a href="">
-                <img src="ICONS/people.png" alt="About" class="dropdown-icon"> About us
-            </a>
-        </div>
-    
-        <label for="menu-toggle" class="overlay"></label>
-    
-        <a href="index.php" class="home-logo">
-            <img src="ICONS/MAIN_LOGO.jpeg" alt="Home" class="logo-center">
-        </a>
-    
-        <div class="right-icons">
-            <?php if (isset($_SESSION['firstname'])): ?>
-                <span style="font-family: sans-serif; font-size: 14px;">
-                    Welcome, <?= htmlspecialchars($_SESSION['firstname']) ?>
-                </span>
-                <a href="logout.php">
-                    <img src="ICONS/exit.png" alt="Logout" class="icon" />
+            <label for="menu-toggle" class="menu-icon">
+                <img src="ICONS/menu-bar.png" alt="Menu" class="icon">
+            </label>
+        
+            <div class="sidebar">
+                <a href="ALBUMS.php">
+                    <img src="ICONS/stack.png" alt="About" class="dropdown-icon"> Albums
                 </a>
-            <?php else: ?>
-                <a href="LOGIN.html">
-                    <img src="ICONS/account.png" alt="Account" class="icon" />
+                <a href="MERCH.php">
+                    <img src="ICONS/bag.png" alt="Merch" class="dropdown-icon"> Merchandise
                 </a>
-            <?php endif; ?>
-
-            <a href="#cart">
-                <img src="ICONS/shopping-cart.png" alt="Cart" class="icon">
+                <a href="">
+                    <img src="ICONS/people.png" alt="About" class="dropdown-icon"> About us
+                </a>
+            </div>
+        
+            <label for="menu-toggle" class="overlay"></label>
+        
+            <a href="index.php" class="home-logo">
+                <img src="ICONS/MAIN_LOGO.jpeg" alt="Home" class="logo-center">
             </a>
+        
+            <div class="right-icons">
+                <?php if (isset($_SESSION['firstname'])): ?>
+                    <span class="user-welcome">
+                        Welcome, <?= htmlspecialchars($_SESSION['firstname']) ?>
+                    </span>
+                    <a href="logout.php">
+                        <img src="ICONS/exit.png" alt="Logout" class="icon" />
+                    </a>
+                <?php else: ?>
+                    <a href="LOGIN.html">
+                        <img src="ICONS/account.png" alt="Account" class="icon" />
+                    </a>
+                <?php endif; ?>
+            </div>
         </div>
-    </div>
 
-    <div class="video-container">
-        <video autoplay loop muted> 
+        <div class="video-container">
+            <video autoplay loop muted> 
+                <source src="AESPAWHIP2.mp4" type="video/mp4">
+            </video>
+        </div>
+    </main>
 
-         
-            <source src="AESPAWHIP2.mp4" type="video/mp4">
-            
-        </video>
-    </div>
-</main>
-
-<footer class="footer">
+    <footer class="footer">
         <div class="footer-line"></div>
     
         <div class="social-icons">
@@ -82,9 +77,8 @@
         </div>
     
         <div class="footer-line"></div>
-</footer>
+    </footer>
 
-<script src="common.js"></script>
-
+    <script src="common.js"></script>
 </body>
 </html>
