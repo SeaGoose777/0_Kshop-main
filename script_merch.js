@@ -99,6 +99,35 @@ function updateCartModal() {
     });
 }
 
+// Add this function after updateCartModal function
+function processCheckout() {
+    // Get cart total
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    
+    // Create confirmation message
+    const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const confirmMessage = `Are you sure you want to checkout?\n\nTotal Items: ${itemCount}\nTotal Amount: ₱${total.toFixed(2)}`;
+    
+    if (confirm(confirmMessage)) {
+        // Here you would typically send the order to your server
+        // For now, we'll just simulate a successful checkout
+        
+        // Clear the cart
+        cart = [];
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
+        // Update UI
+        updateCartCount();
+        updateCartModal();
+        
+        // Close the modal
+        document.getElementById('cart-modal').style.display = 'none';
+        
+        // Show success message
+        showNotification('Thank you for your purchase! Your order has been placed.', 'success');
+    }
+}
+
 // Wait for DOM to be fully loaded
 window.addEventListener('load', function() {
     // Initialize cart count
@@ -154,14 +183,13 @@ window.addEventListener('load', function() {
         }
     });
 
-    // Checkout button
+    // Update checkout button handler
     checkoutBtn.addEventListener('click', () => {
         if (cart.length === 0) {
             showNotification('Your cart is empty', 'warning');
             return;
         }
-        // Add checkout logic here
-        showNotification('Checkout functionality coming soon!', 'info');
+        processCheckout();
     });
 
     // Add quantity button handlers
