@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merch - aespa Fan Website</title>
+    <link rel="icon" href="pic/aespalogo.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html">
+                <img src="pic/logo.png" alt="aespa" class="logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="news.html">News</a>
+            <a href="albums.html">Albums</a>
+            <a href="merch.html" class="active">Merch</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="nav-icons">
+            <a href="#" class="cart-icon" id="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+            <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-total">
+            <h4>Total: $<span id="cart-total">0.00</span></h4>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <main>
+        <section class="merch-section">
+            <h2>Official Merchandise</h2>
+            <div class="merch-grid">
+                <div class="merch-card">
+                    <img src="MERCH/lightstick.jpeg" alt="Official Light Stick">
+                    <div class="merch-content">
+                        <h3>Official Light Stick</h3>
+                        <p>Official aespa light stick with customizable colors</p>
+                        <div class="price">$45.00</div>
+                        <button class="add-to-cart" data-id="1" data-name="Official Light Stick" data-price="45.00">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="merch-card">
+                    <img src="MERCH/backpack.jpeg" alt="Backpack">
+                    <div class="merch-content">
+                        <h3>MINI BACKPACK SET</h3>
+                        <p>aespa 'Armageddon : The Mystery Circle' POP-UP MD</p>
+                        <div class="price">$35.00</div>
+                        <button class="add-to-cart" data-id="2" data-name="MINI BACKPACK SET" data-price="35.00">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="merch-card">
+                    <img src="MERCH/aespa1stalbum2.jpeg" alt="Photocard Set">
+                    <div class="merch-content">
+                        <h3>The 1st Album 'Armageddon'</h3>
+                        <p>(My Power Ver.)</p>
+                        <div class="price">$25.00</div>
+                        <button class="add-to-cart" data-id="3" data-name="The 1st Album 'Armageddon' (My Power Ver.)" data-price="25.00">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="merch-card">
+                    <img src="MERCH/pinkhoodie.jpeg" alt="MY WORLD Hoodie">
+                    <div class="merch-content">
+                        <h3>PINK HOODIE ZIP-UP SET </h3>
+                        <p>2025 aespa LIVE TOUR - SYNK : PARALLEL LINE - ENCORE MD</p>
+                        <div class="price">$55.00</div>
+                        <button class="add-to-cart" data-id="4" data-name="MY WORLD Hoodie" data-price="55.00">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="albums.html">Albums</a></li>
+                    <li><a href="merch.html">Merch</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 aespa Fan Website. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+    <script src="newsletter.js"></script>
+</body>
+</html> 
