@@ -1,0 +1,173 @@
+<?php
+require_once 'config.php';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - aespa Fan Website</title>
+    <link rel="icon" href="pic/aespalogo.jpg">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/sections.css">
+    <link rel="stylesheet" href="styles/news.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.php">
+                <img src="pic/logo.png" alt="aespa" class="logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="index.php">Home</a>
+            <a href="news.php" class="active">News</a>
+            <a href="albums.php">Albums</a>
+            <a href="merch.php">Merch</a>
+            <a href="gallery.php">Gallery</a>
+            <a href="about.php">About</a>
+            <a href="contact.php">Contact</a>
+        </div>
+        <div class="nav-icons">
+            <a href="cart.php" class="cart-icon" id="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count"><?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0; ?></span>
+            </a>
+            <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+            <?php if (isLoggedIn()): ?>
+                <a href="account.php" class="account-icon"><i class="fas fa-user"></i></a>
+                <a href="logout.php" class="logout-icon"><i class="fas fa-sign-out-alt"></i></a>
+            <?php else: ?>
+                <a href="login.php" class="login-icon"><i class="fas fa-sign-in-alt"></i> Log In</a>
+            <?php endif; ?>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-total">
+            <h4>Total: $<span id="cart-total">0.00</span></h4>
+            <a href="cart.php" class="checkout-btn">Purchase</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="news-section">
+            <h2>Latest News</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <img src="pic/concert2025.jpg" alt="News 1" onclick="window.location.href='https://readdork.com/news/red-velvet-nct127-smtown-london/#:~:text=The%20event%2C%20scheduled%20for%2028th%20June%2C%20will%20feature,EXO%2C%20NCT%20DREAM%2C%20WayV%2C%20RIIZE%2C%20and%20NCT%20WISH.'">
+                    <div class="news-content">
+                        <h3>SMTOWN LIVE 2025</h3>
+                        <p>aespa will join SMTOWN LIVE 2025 in London on June 28, SM's first Europe concert in 14 years. The lineup includes EXO, NCT units, Red Velvet, TVXQ!, and Hearts2Hearts, with aespa preparing a powerful show.</p>
+                        <span class="date">June 28, 2025</span>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <img src="pic/comback.jpeg" alt="News 2" onclick="window.location.href='https://www.allkpop.com/article/2025/05/aespa-confirm-june-comeback'">
+                    <div class="news-content">
+                        <h3>Aespa Coming Back in June 2025?</h3>
+                        <p>aespa is rumored to be coming back in June 2025. Stay tuned for more updates!</p>
+                        <span class="date">June 2025</span>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <img src="pic/encore.jpeg" alt="News 3" onclick="window.location.href='https://www.chosun.com/english/kpop-culture-en/2025/03/17/S36QMRC4ZJGCROWLELUZGDCIRI/'">
+                    <div class="news-content">
+                        <h3>Aespa's encore in Seoul: A spectacular finale to their world tour</h3>
+                        <p>Seoul's KSPO Dome lights up with aespa's powerful final performance of their global tour</p>
+                        <span class="date">March 17, 2025</span>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <img src="pic/news1.jpg" alt="News 4" onclick="window.location.href='https://www.msn.com/en-xl/news/other/meet-the-aespa-members-and-the-powerhouse-behind-k-pops-girl-group/ar-AA1F6WKS'">
+                    <div class="news-content">
+                        <h3>The powerhouse behind K-pop's girl group</h3>
+                        <p>The groundbreaking K-pop girl group Aespa, created under the supervision of SM Entertainment, has taken the world by storm since its debut in November 2020. Aespa members include Karina, Giselle, Winter, and Ningning. Each member adds their distinct charm, personality, and talent to the group, making Aespa a powerful contender in the market.</p>
+                        <span class="date">May 20, 2025</span>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <img src="pic/KCON.jpeg" alt="News 5" onclick="window.location.href='https://www.billboard.com/music/music-news/kcon-la-aespa-nct-127-2025-lineup-1235969665/'">
+                    <div class="news-content">
+                        <h3>aespa, NCT 127 & More Added to 2025 KCON LA Lineup</h3>
+                        <p>KCON LA will take place Aug. 1-3 at the downtown L.A. venue.</p>
+                        <span class="date">May 12, 2025</span>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <img src="pic/news5.jpeg" alt="News 6" onclick="window.location.href='https://entertainment.inquirer.net/603293/aespa-to-sing-whiplash-in-english-at-billboard-awards-show'">
+                    <div class="news-content">
+                        <h3>Aespa to sing 'Whiplash' in English at Billboard awards show</h3>
+                        <p>The foursome will stage the new version for the first time at Billboard's Women in Music 2025, which is to take place in Los Angeles on Saturday. Aespa is to be recognized as group of the year at the upcoming awards show.
+
+                            The English version of "Whiplash" will be part of the group's next single album, which is to also include a techno house remix whipped up by DJ and producer Steve Aoki.
+                            
+                            In a joint Instagram post with aespa, Billboard commended the K-pop girl group for setting new trends.</p>
+                        <span class="date">March 27, 2025</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/aespa_official/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/aespa_official" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.youtube.com/aespa" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@aespa_official" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="news.php">News</a></li>
+                    <li><a href="albums.php">Albums</a></li>
+                    <li><a href="merch.php">Merch</a></li>
+                    <li><a href="gallery.php">Gallery</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form" method="POST" action="subscribe.php">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <?php echo date('Y'); ?> aespa Fan Website. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/newsletter.js"></script>
+</body>
+</html> 

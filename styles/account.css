@@ -1,0 +1,157 @@
+.account-section {
+    padding: 120px 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: calc(100vh - 200px);
+}
+
+.account-container {
+    background: rgba(26, 26, 26, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.account-container h2 {
+    color: var(--text-color);
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.account-info {
+    background: rgba(42, 42, 42, 0.95);
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.account-info h3 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.account-info p {
+    margin: 15px 0;
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.account-info strong {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.edit-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    border: none;
+    font-weight: 500;
+}
+
+.edit-button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.order-history {
+    margin-top: 40px;
+}
+
+.order-history h3 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.order {
+    background: rgba(42, 42, 42, 0.95);
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.order:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.order h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.order p {
+    color: #ccc;
+    margin: 8px 0;
+}
+
+.order-items {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.order-items h5 {
+    color: var(--text-color);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.order-items ul {
+    list-style: none;
+    padding: 0;
+}
+
+.order-items li {
+    color: #ccc;
+    margin: 8px 0;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .account-section {
+        padding: 100px 15px 30px;
+    }
+
+    .account-container {
+        padding: 20px;
+    }
+
+    .account-info, .order {
+        padding: 20px;
+    }
+
+    .account-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .account-info h3, .order-history h3 {
+        font-size: 1.3rem;
+    }
+
+    .account-info p {
+        font-size: 1rem;
+    }
+} 
